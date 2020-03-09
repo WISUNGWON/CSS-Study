@@ -21,8 +21,8 @@ p {
   margin-left: auto; /* 가운데 정렬 용.*/
   margin-right: auto; /* margin : auto, 남은 여백을 자동으로 나눠 갖는다는 의미 */
   /* margin: 0 auto;와 같이 축약형으로도 많이 씀*/
-  font-size: 0; /* item사이의 공간을 0으로 만들기, 단 모든 자식에게 적용되므로 자식에게는 font-size를 적용하여서 폰트가 
-    보이게 해야 한다. */
+  font-size: 0; /* item사이의 공간을 0으로 만들기, 단 모든 자식에게 적용되므로 자식에게는
+   font-size를 적용하여서 폰트가 보이게 해야 한다. */
 }
 
 .item {

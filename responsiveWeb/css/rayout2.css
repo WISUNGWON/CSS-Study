@@ -10,11 +10,26 @@ p {
 }
 
 .container {
+  background-color: pink; /* float가 되어 있으면 pink가 적용되지 않는다.
+  즉, float가 되어 있으면, 부모가 자식을 품지 않는것으로 인식이 됨. 따라서 부모에적용된
+  요소가 자식에 적용되지 않는다.*/
+}
+
+/* 가상엘리먼트를 이용하는 방식*/
+/* 설정한 자리(after)에 가상으로 엘리먼트를 생성함.
+개발자 도구를 보면 확인가능*/
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden; /* 깔끔한 설정을 위해*/
 }
 
 .item {
   float: left; /* display: inline-block과 같은 효과이면서 훨씬 빠름.
-  float에 적용된 엘리먼트 주변에 있는 것들이 엘리먼트를 왼쪽에 두고 감싸고 돈다  ex)잡지에서
+  float에 적용된 엘리먼트 주변에 있는 것들(같은 클래스가 아니어도 주변의 모든 것들에 적용)
+  이 엘리먼트를 왼쪽에 두고 감싸고 돈다  ex)잡지에서
   이미지가 한쪽에 붙어있고, 글들이 주변을 감싸는 모양을 생각한다. 두 item에 float: left를 했기 때문에
   두 엘리먼트라 나란히 왼쪽으로 붙어서 display: inline-block와 같은 효과를 보인다. */
   padding: 5%;
@@ -30,6 +45,9 @@ p {
   width: 50%;
   background-color: yellowgreen;
 }
-
+footer {
+  clear: both; /* left, right 커버할 수 있게 both를 사용하여 float를 clear한다.*/
+  background: gray;
+}
 /* item-a 와 -b는 section이기 때문에 display가 block임 이 상태에서 inline속성을 넣어서 나란히 붙여주려면 display를 
   크기조정과 inline속성 두 기능을 다 갖는 inline block을 사용하면 된다.*/
