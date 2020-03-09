@@ -1,0 +1,51 @@
+body {
+  margin: 0; /* CSS 초기화*/
+  font-size: 2em;
+}
+
+h1,
+p {
+  /* CSS 초기화*/
+  margin: 0;
+}
+
+/*
+* { 이 형식을 사용하여 모든 페이지내에 CSS 리셋을 적용하는 형태도 있음. 모든 요소를 체크하기 떄문에 렌더링속도(성능에 악영향을 미침)
+    margin :0;
+    padding :0; 
+}
+*/
+
+.container {
+  max-width: 1000px; /* 브라우저를 늘렸을때, 글도 같이 늘어나는 최대치. 1000px이상으로 늘렸을 때는 더이상 늘어나지 않는다.*/
+  margin-left: auto; /* 가운데 정렬 용.*/
+  margin-right: auto; /* margin : auto, 남은 여백을 자동으로 나눠 갖는다는 의미 */
+  /* margin: 0 auto;와 같이 축약형으로도 많이 씀*/
+  font-size: 0; /* item사이의 공간을 0으로 만들기, 단 모든 자식에게 적용되므로 자식에게는 font-size를 적용하여서 폰트가 
+    보이게 해야 한다. */
+}
+
+.item {
+  /*display: inline-block; 공백문자 section item-a사이와 section item-b에 엔터 등을 통해 공간이 있으면. inline-block이 100
+  를 넘어서 적용이 되지 않음. 따라서 공백문자를 지우거나 크기를 0으로 만들어 주면 된다.*/
+  /*width: 100%; width를 100%로 먹이면 padding 5%가 더해져 실제로 110%를 차지하고 10%만큼의 가로스크롤이 생김(box model)*/
+  /*displayment block의 장점*/
+  display: inline-block;
+  vertical-align: top; /* 수직정렬, 페이지 맨위에 글이 붙게 해줌. */
+  font-size: 1rem; /*rem: root em : html을 가르킴. 즉, html의 디폴트 font-size를 사용함 (16px) */
+  padding: 5%;
+}
+
+.item-a {
+  width: 30%; /* 기본형인 box-sizing: content-box를 사용하고 있기 때문에 .item클래스를 통해 적용될 padding값 10%(각각5%)가 제외될
+  것을 고려하여 100%를 만든다.*/
+  background-color: yellow;
+}
+
+.item-b {
+  width: 50%;
+  background-color: yellowgreen;
+}
+
+/* item-a 와 -b는 section이기 때문에 display가 block임 이 상태에서 inline속성을 넣어서 나란히 붙여주려면 display를 
+크기조정과 inline속성 두 기능을 다 갖는 inline block을 사용하면 된다.*/
